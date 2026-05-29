@@ -1,26 +1,103 @@
 @import "tailwindcss";
 
+@theme {
+  /* Sunlit editorial base */
+  --color-paper: #faf6ef;
+  --color-paper-2: #f3ecde;
+  --color-card: #ffffff;
+  --color-ink: #14213d;
+  --color-ink-soft: #44506a;
+  --color-line: #e7dfcd;
+
+  /* Blue-forward accents with one warm pop */
+  --color-blue: #1d4ed8;
+  --color-blue-deep: #16308a;
+  --color-sky: #0ea5e9;
+  --color-sky-deep: #0b87c0;
+  --color-coral: #f2683c;
+  --color-coral-deep: #d8531f;
+
+  --font-display: var(--font-display), "Helvetica Neue", Arial, sans-serif;
+  --font-serif: var(--font-serif), Georgia, "Times New Roman", serif;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --background: #faf6ef;
+  --foreground: #14213d;
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-serif);
+  background-image:
+    radial-gradient(circle at 8% -5%, rgba(29, 78, 216, 0.07), transparent 40%),
+    radial-gradient(circle at 95% 0%, rgba(14, 165, 233, 0.06), transparent 38%);
+  background-attachment: fixed;
+}
+
+::selection {
+  background-color: var(--color-blue);
+  color: #ffffff;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  letter-spacing: -0.015em;
+}
+
+/* Thin tricolor accent rule (blue, sky, coral) */
+.accent-strip {
+  height: 5px;
+  width: 100%;
+  background: linear-gradient(
+    90deg,
+    var(--color-blue) 0%,
+    var(--color-blue) 45%,
+    var(--color-sky) 45%,
+    var(--color-sky) 78%,
+    var(--color-coral) 78%,
+    var(--color-coral) 100%
+  );
+}
+
+/* Hairline rule with a centered diamond */
+.fleur-rule {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: var(--color-blue);
+}
+.fleur-rule::before,
+.fleur-rule::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(20, 33, 61, 0.18),
+    transparent
+  );
+}
+
+a {
+  text-decoration: none;
+}
+
+.prose-bayou p {
+  line-height: 1.78;
+  margin-bottom: 1.15rem;
+  color: #2a3349;
+  font-size: 1.085rem;
+}
+.prose-bayou p:last-child {
+  margin-bottom: 0;
+}
+.prose-bayou strong {
+  color: var(--color-blue-deep);
+  font-weight: 600;
+}
+.prose-bayou em {
+  color: var(--color-ink);
 }
