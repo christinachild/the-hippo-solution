@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Container, Stat } from "@/components/ui";
 import { HippoMark } from "@/components/HippoMark";
+import { JsonLd, websiteSchema } from "@/components/seo";
 
 const SECTIONS = [
   {
@@ -50,6 +51,11 @@ const SECTIONS = [
 export default function Home() {
   return (
     <div>
+      <JsonLd
+        data={websiteSchema(
+          "The true story of the 1910 American Hippo Bill, the plan to ranch hippos in the Louisiana bayou, plus everything that could have gone wrong.",
+        )}
+      />
       <section className="relative overflow-hidden border-b border-line">
         <Container className="py-20 text-center sm:py-28">
           <HippoMark className="mx-auto h-20 w-20 text-blue" />

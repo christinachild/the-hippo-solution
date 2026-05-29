@@ -8,16 +8,31 @@ import {
   CardGrid,
   PageNav,
 } from "@/components/ui";
+import { JsonLd, articleSchema, breadcrumbSchema } from "@/components/seo";
+
+const TITLE = "The American Hippo Bill";
+const DESCRIPTION =
+  "In 1910, Rep. Robert Broussard introduced H.R. 23261 to import hippos into Louisiana. Here is who was behind it and why it died.";
+const PATH = "/the-bill";
 
 export const metadata: Metadata = {
-  title: "The American Hippo Bill",
-  description:
-    "In 1910, Rep. Robert Broussard introduced H.R. 23261 to import hippos into Louisiana. Here is who was behind it and why it died.",
+  title: TITLE,
+  description: DESCRIPTION,
+  alternates: { canonical: PATH },
 };
 
 export default function TheBillPage() {
   return (
     <div>
+      <JsonLd
+        data={[
+          articleSchema({ title: TITLE, description: DESCRIPTION, path: PATH }),
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: TITLE, path: PATH },
+          ]),
+        ]}
+      />
       <PageHero
         kicker="washington, 1910"
         title="The American Hippo Bill"

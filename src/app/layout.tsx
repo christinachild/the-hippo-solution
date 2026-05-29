@@ -25,6 +25,11 @@ export const metadata: Metadata = {
   },
   description:
     "In 1910, Congress nearly imported hippos into the Louisiana bayou to fix a meat shortage and eat a runaway weed. This is the true, gloriously bad idea that almost was.",
+  alternates: {
+    canonical: "/",
+  },
+  authors: [{ name: "Christina Child", url: "https://christinachild.com" }],
+  creator: "Christina Child",
   keywords: [
     "American Hippo Bill",
     "Lake Cow Bacon",

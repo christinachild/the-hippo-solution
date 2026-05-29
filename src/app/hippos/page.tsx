@@ -8,16 +8,31 @@ import {
   CardGrid,
   PageNav,
 } from "@/components/ui";
+import { JsonLd, articleSchema, breadcrumbSchema } from "@/components/seo";
+
+const TITLE = "Fun Facts About Hippos";
+const DESCRIPTION =
+  "The animal Congress wanted to ranch is one of the strangest on Earth. True, surprising hippo facts, with the myths flagged.";
+const PATH = "/hippos";
 
 export const metadata: Metadata = {
-  title: "Fun Facts About Hippos",
-  description:
-    "The animal Congress wanted to ranch is one of the strangest on Earth. True, surprising hippo facts, with the myths flagged.",
+  title: TITLE,
+  description: DESCRIPTION,
+  alternates: { canonical: PATH },
 };
 
 export default function HipposPage() {
   return (
     <div>
+      <JsonLd
+        data={[
+          articleSchema({ title: TITLE, description: DESCRIPTION, path: PATH }),
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: TITLE, path: PATH },
+          ]),
+        ]}
+      />
       <PageHero
         kicker="know your guest"
         title="Fun Facts About Hippos"

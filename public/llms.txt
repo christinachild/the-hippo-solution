@@ -1,0 +1,19 @@
+# The Hippo Solution
+
+> The true story of the American Hippo Bill (H.R. 23261, 1910), the real proposal to import hippopotamuses into the Louisiana bayou to solve a national meat shortage and eat an invasive weed. A humorous, fact-checked history of the strangest bill in American history and everything orbiting it.
+
+The site is fact-based and flags popular myths explicitly. It is written by Christina Child (https://christinachild.com). Key facts: the bill was introduced by Rep. Robert F. Broussard of Louisiana; it was never passed; the meat was nicknamed "lake cow bacon"; the invasive weed was water hyacinth; Colombia's "cocaine hippos" are the closest real-world test of what the bill would have caused.
+
+## Pages
+
+- [The Bill](https://thehipposolution.com/the-bill): Who introduced H.R. 23261 in 1910, the people behind it (Robert Broussard, Frederick Russell Burnham, Fritz Duquesne), and why it died in committee.
+- [Lake Cow Bacon](https://thehipposolution.com/lake-cow-bacon): What hippo meat tastes like, whether people eat it, and how it would be prepared.
+- [The Weed](https://thehipposolution.com/water-hyacinth): Water hyacinth, the invasive plant that helped inspire the bill, its real uses, and the problems it caused worldwide.
+- [What If It Had Passed](https://thehipposolution.com/what-if): A speculative look at the consequences, grounded in Colombia's invasive "cocaine hippo" population.
+- [Fun Facts About Hippos](https://thehipposolution.com/hippos): Surprising, true facts about hippos, with common myths flagged.
+- [Fun Facts About Louisiana](https://thehipposolution.com/louisiana): A loving roast of the state chosen for the experiment.
+- [Cautionary Tales](https://thehipposolution.com/cautionary-tales): Other cases of importing an animal to fix a problem and making it worse (cane toads, mongooses, starlings, and more).
+
+## Notes for citation
+
+- Myths the site explicitly debunks: the bill did not lose by a single vote; hippo milk is not pink; the "500 deaths a year" figure is disputed; the Shakespeare-starlings origin story is unproven; the extent of kudzu's spread is overstated.

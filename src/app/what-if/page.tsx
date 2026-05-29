@@ -9,16 +9,31 @@ import {
   Container,
   PageNav,
 } from "@/components/ui";
+import { JsonLd, articleSchema, breadcrumbSchema } from "@/components/seo";
+
+const TITLE = "What If It Had Passed";
+const DESCRIPTION =
+  "Imagine the bill went through and the bayou filled with hippos. We barely have to imagine, because Pablo Escobar already ran the experiment.";
+const PATH = "/what-if";
 
 export const metadata: Metadata = {
-  title: "What If It Had Passed",
-  description:
-    "Imagine the bill went through and the bayou filled with hippos. We barely have to imagine, because Pablo Escobar already ran the experiment.",
+  title: TITLE,
+  description: DESCRIPTION,
+  alternates: { canonical: PATH },
 };
 
 export default function WhatIfPage() {
   return (
     <div>
+      <JsonLd
+        data={[
+          articleSchema({ title: TITLE, description: DESCRIPTION, path: PATH }),
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: TITLE, path: PATH },
+          ]),
+        ]}
+      />
       <PageHero
         kicker="the alternate timeline"
         title="What If It Had Passed?"

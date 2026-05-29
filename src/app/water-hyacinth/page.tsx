@@ -10,16 +10,31 @@ import {
   Container,
   PageNav,
 } from "@/components/ui";
+import { JsonLd, articleSchema, breadcrumbSchema } from "@/components/seo";
+
+const TITLE = "The Weed That Started It";
+const DESCRIPTION =
+  "Water hyacinth choked Louisiana's waterways and helped inspire the hippo bill. The plant's rampage, its real uses, and the disasters it caused worldwide.";
+const PATH = "/water-hyacinth";
 
 export const metadata: Metadata = {
-  title: "The Weed That Started It",
-  description:
-    "Water hyacinth choked Louisiana's waterways and helped inspire the hippo bill. The plant's rampage, its real uses, and the disasters it caused worldwide.",
+  title: TITLE,
+  description: DESCRIPTION,
+  alternates: { canonical: PATH },
 };
 
 export default function WaterHyacinthPage() {
   return (
     <div>
+      <JsonLd
+        data={[
+          articleSchema({ title: TITLE, description: DESCRIPTION, path: PATH }),
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: TITLE, path: PATH },
+          ]),
+        ]}
+      />
       <PageHero
         kicker="the actual villain"
         title="The Weed That Started It"

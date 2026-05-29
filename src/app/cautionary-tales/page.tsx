@@ -8,16 +8,31 @@ import {
   CardGrid,
   PageNav,
 } from "@/components/ui";
+import { JsonLd, articleSchema, breadcrumbSchema } from "@/components/seo";
+
+const TITLE = "Cautionary Tales";
+const DESCRIPTION =
+  "The hippo bill was not a one-off. A short history of solving a problem by importing an animal, and watching it become a much bigger problem.";
+const PATH = "/cautionary-tales";
 
 export const metadata: Metadata = {
-  title: "Cautionary Tales",
-  description:
-    "The hippo bill was not a one-off. A short history of solving a problem by importing an animal, and watching it become a much bigger problem.",
+  title: TITLE,
+  description: DESCRIPTION,
+  alternates: { canonical: PATH },
 };
 
 export default function CautionaryTalesPage() {
   return (
     <div>
+      <JsonLd
+        data={[
+          articleSchema({ title: TITLE, description: DESCRIPTION, path: PATH }),
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: TITLE, path: PATH },
+          ]),
+        ]}
+      />
       <PageHero
         kicker="this keeps happening"
         title="A Brief History of Bad Ideas"

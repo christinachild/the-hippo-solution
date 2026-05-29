@@ -8,16 +8,56 @@ import {
   CardGrid,
   PageNav,
 } from "@/components/ui";
+import {
+  JsonLd,
+  articleSchema,
+  breadcrumbSchema,
+  faqSchema,
+} from "@/components/seo";
+
+const TITLE = "Lake Cow Bacon";
+const DESCRIPTION =
+  "What does hippo actually taste like, and how would anyone cook one and a half tons of it? The strange culinary case for the bill.";
+const PATH = "/lake-cow-bacon";
+
+const FAQ = [
+  {
+    q: "What does hippo meat taste like?",
+    a: "Accounts vary. In 1910 the USDA's William Newton Irwin claimed it tasted like a combination of pork and beef. People who have actually eaten it describe it as closer to beef or venison than fish, a little sweet, lean and lightly marbled, while others call it bland. In short, a mild red meat with no strong character.",
+  },
+  {
+    q: "Can you eat hippo, and is it legal?",
+    a: "People do eat hippo today, mainly as bushmeat in parts of West and Central Africa, and humans have eaten it for thousands of years. In the United States, however, hippo meat is illegal to buy, order, or serve.",
+  },
+  {
+    q: "How is hippo meat prepared?",
+    a: "Where it is eaten, hippo is treated like any tough, lean wild red meat: grilled or roasted over fire, stewed and braised low and slow, or dried into a jerky similar to South African biltong.",
+  },
+  {
+    q: "What is lake cow bacon?",
+    a: "'Lake cow bacon' was the press nickname for hippo meat coined around the 1910 American Hippo Bill, before any American had tasted it. The name came first; the product was never actually produced or sold.",
+  },
+];
 
 export const metadata: Metadata = {
-  title: "Lake Cow Bacon",
-  description:
-    "What does hippo actually taste like, and how would anyone cook one and a half tons of it? The strange culinary case for the bill.",
+  title: TITLE,
+  description: DESCRIPTION,
+  alternates: { canonical: PATH },
 };
 
 export default function LakeCowBaconPage() {
   return (
     <div>
+      <JsonLd
+        data={[
+          articleSchema({ title: TITLE, description: DESCRIPTION, path: PATH }),
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: TITLE, path: PATH },
+          ]),
+          faqSchema(FAQ),
+        ]}
+      />
       <PageHero
         kicker="the menu"
         title="Lake Cow Bacon"

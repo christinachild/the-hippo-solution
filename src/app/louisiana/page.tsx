@@ -8,16 +8,31 @@ import {
   CardGrid,
   PageNav,
 } from "@/components/ui";
+import { JsonLd, articleSchema, breadcrumbSchema } from "@/components/seo";
+
+const TITLE = "Fun Facts About Louisiana";
+const DESCRIPTION =
+  "The state we chose to fill with hippos has an official meat pie, drive-through daiquiris, and a coastline that is actively leaving. A loving roast.";
+const PATH = "/louisiana";
 
 export const metadata: Metadata = {
-  title: "Fun Facts About Louisiana",
-  description:
-    "The state we chose to fill with hippos has an official meat pie, drive-through daiquiris, and a coastline that is actively leaving. A loving roast.",
+  title: TITLE,
+  description: DESCRIPTION,
+  alternates: { canonical: PATH },
 };
 
 export default function LouisianaPage() {
   return (
     <div>
+      <JsonLd
+        data={[
+          articleSchema({ title: TITLE, description: DESCRIPTION, path: PATH }),
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: TITLE, path: PATH },
+          ]),
+        ]}
+      />
       <PageHero
         kicker="the chosen state"
         title="Fun Facts About Louisiana"
